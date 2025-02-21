@@ -1,0 +1,195 @@
+.loginContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #080710;
+    align-items: center;
+    justify-content: center;
+
+    .background {
+        width: 430px;
+        height: 520px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+
+        .shape {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+
+            &:first-child {
+                background: linear-gradient(#1845ad, #23a2f6);
+                left: -80px;
+                top: -80px;
+            }
+            &:last-child {
+                background: linear-gradient(to right, #ff512f, #f09819);
+                right: -30px;
+                bottom: -80px;
+            }
+        }
+    }
+
+    .loginWrap {
+        height: auto;
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.13);
+        position: relative;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        padding: 50px 35px;
+        text-align: center;
+
+        * {
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        p {
+            text-align: left;
+            font-size: 14px;
+            padding-top: 1rem;
+            display: block;
+            color: #ffd3d3;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+        }
+
+        label {
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .inputWrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        input {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.07);
+            padding: 0 15px;
+            font-size: 14px;
+            font-weight: 300;
+            position: relative;
+
+            &::placeholder {
+                color: #e5e5e5;
+            }
+        }
+
+        button {
+            margin-top: 50px;
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.25s ease-out;
+
+            &:hover {
+                background: linear-gradient(to right, #9b22fa, #3422fa 70%);
+                color: white;
+            }
+        }
+
+        // ✅ before & after 효과 추가
+        .inputWrapper {
+            position: relative;
+            margin-top: 10px;
+            &:hover {
+                border: none;
+
+                &::after {
+                    height: 100%;
+                }
+
+                &::before {
+                    width: 100%;
+                }
+
+                span {
+                    &::after {
+                        height: 100%;
+                    }
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0px;
+                height: 2px;
+                background: linear-gradient(135deg, rgb(128, 21, 194) 0%, rgb(148, 30, 205) 25%);
+                bottom: 0;
+                right: 0;
+                transition: 0.3s;
+                z-index: 1;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 0px;
+                background: linear-gradient(315deg, rgb(148, 30, 205) 25%, rgb(108, 34, 210) 50%);
+                bottom: 0;
+                right: 0;
+                transition: 0.3s;
+                z-index: 1;
+            }
+
+            span {
+                width: 100%;
+                display: block;
+                height: 50px;
+                position: absolute;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 0px;
+                    height: 2px;
+                    background: linear-gradient(135deg, rgb(141 83 221) 50%, rgb(88, 39, 219) 100%);
+                    top: 0;
+                    left: 0;
+                    transition: 0.3s;
+                    z-index: 1;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 2px;
+                    height: 0px;
+                    background: linear-gradient(135deg, rgb(141 83 221) 0, rgb(128, 21, 194) 100%);
+                    top: 0;
+                    left: 0;
+                    transition: 0.3s;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

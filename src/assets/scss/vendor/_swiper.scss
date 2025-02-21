@@ -1,0 +1,129 @@
+.bugsfarm {
+    .swiper-pagination {
+        bottom: 0;
+        top: inherit !important;
+    }
+    .swiper-slide {
+        height: 248px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 1px solid #d3d3d3;
+            border-radius: 8px;
+        }
+        p {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.055em;
+            color: #000;
+            line-height: 1.66;
+            text-align: center;
+            padding-top: 16px;
+        }
+    }
+    .swiper-pagination-progressbar {
+        background: none !important;
+        border: 1px solid #d3d3d3;
+    }
+    .swiper-pagination-progressbar-fill {
+        background: #b3cf0a !important;
+    }
+    .swiper {
+        height: 400px;
+        cursor: grab;
+    }
+}
+.main_swiper {
+    .list {
+        height: 100%;
+        .swiper-slide {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            height: auto;
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 24px;
+                object-fit: cover; // 이미지 비율 유지 및 슬라이드 크기에 맞게 조정
+            }
+
+            video {
+                width: 100%;
+                height: 100%; // 비디오도 슬라이드 높이에 맞춤
+                object-fit: cover;
+            }
+        }
+        .swiper_info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 80px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 76px;
+            h2 {
+                color: #eeeeee;
+                font-size: 20px;
+            }
+            p {
+                margin: 32px 0 38px;
+                color: #fff;
+                font-size: 52px;
+                font-weight: 700;
+                line-height: 1.3;
+            }
+            span {
+                color: #eeeeee;
+                font-size: 22px;
+                font-weight: 300;
+                line-height: 1.3;
+                opacity: 0.9;
+            }
+            a {
+                color: white;
+                background-color: transparent;
+                border: 2px solid white;
+                color: #fff;
+                min-width: 220px;
+                min-height: 72px;
+                padding: 10px 32px;
+                border-radius: 36px;
+                font-size: 20px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+                text-decoration: none;
+                transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+                svg {
+                    * {
+                        color: white;
+                    }
+                }
+                &:hover {
+                    background-color: white;
+                    color: #131313;
+                    svg {
+                        * {
+                            color: #131313;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.news_swiper {
+    .swiper-wrapper {
+        transition-timing-function: linear !important; // 부드러운 전환
+    }
+
+    .swiper-slide {
+        width: auto; // 슬라이드가 콘텐츠 크기에 맞게 조정
+        flex-shrink: 0; // 슬라이드가 줄어들지 않도록 설정
+    }
+}

@@ -1,0 +1,31 @@
+// 화면 사이즈 구간 변수 설정
+$breakpoint-mobile: 335px; // 모바일 시작 크기
+$breakpoint-tablet: 758px; // 태블릿 시작 크기
+$breakpoint-desktop: 1024px; // 데스크탑 시작 크기
+
+body {
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #b3cf0a;
+        border-radius: 10px; /* 스크롤바 둥근 테두리 */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent; /*스크롤바 뒷 배경 색상*/
+    }
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+.wrap {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}

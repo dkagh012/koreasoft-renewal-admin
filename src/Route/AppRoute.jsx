@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { useLocation, Route, Routes } from 'react-router-dom';
 
-import Header from '@layout/Header';
+// import Header from '@layout/Header';
 import { ROUTE_PATH } from '../constants/routePath.jsx';
 
 const AppRoute = () => {
@@ -11,7 +11,7 @@ const AppRoute = () => {
     return (
         <>
             <div className="container">
-                <Header />
+                {/* <Header /> */}
                 <div className="wrap">
                     <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
                         <Routes location={location} key={`path_${pageKey}`}>

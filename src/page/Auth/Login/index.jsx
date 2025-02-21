@@ -1,34 +1,37 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import styles from './index.module.scss';
 // import Logo from '@images/logo-white.png';
 
 const Login = () => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    // const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = async e => {
-        e.preventDefault();
-        setError('');
+    // const handleLogin = async e => {
+    //     e.preventDefault();
+    //     setError('');
 
-        try {
-            const response = await axios.post('/auth/login', { id, password });
+    //     try {
+    //         const response = await axios.post('/auth/login', { id, password });
 
-            if (response.data.token) {
-                localStorage.setItem('token', response.data.token); // 토큰 저장
-                navigate('/dashboard'); // 로그인 성공 시 대시보드로 이동
-            } else {
-                setError('로그인 실패. 다시 시도해주세요.');
-            }
-        } catch (err) {
-            setError(`이메일 또는 비밀번호가 올바르지 않습니다. `);
-            console.log(err.message);
-        }
+    //         if (response.data.token) {
+    //             localStorage.setItem('token', response.data.token); // 토큰 저장
+    //             navigate('/dashboard'); // 로그인 성공 시 대시보드로 이동
+    //         } else {
+    //             setError('로그인 실패. 다시 시도해주세요.');
+    //         }
+    //     } catch (err) {
+    //         setError(`이메일 또는 비밀번호가 올바르지 않습니다. `);
+    //         console.log(err.message);
+    //     }
+    // };
+    const handleLogin = e => {
+        e.preventDefault(); // 기본 폼 제출 방지
+        navigate('/'); // 로그인 성공 시 이동
     };
-
     return (
         <div className={styles.loginContainer}>
             <div className={styles.background}>
@@ -65,7 +68,7 @@ const Login = () => {
                     </div>
                     <button type="submit">로그인</button>
                 </form>
-                {error && <p className={styles.error}>{error}</p>}
+                {/* {error && <p className={styles.error}>{error}</p>} */}
             </div>
         </div>
     );

@@ -1,0 +1,94 @@
+.sideMenuContainer {
+    z-index: 1001;
+    background: #fff;
+    bottom: 0;
+    margin-top: 0;
+    position: fixed;
+    top: 70px;
+    -webkit-box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+    box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+    background: #2a3042;
+    // transform: translateX(-100%);
+    width: 70px;
+    .sideMenuWrap {
+        height: 100%;
+        .item {
+            a,
+            button {
+                display: block;
+                color: #a6b0cf;
+                position: relative;
+                font-size: 18px;
+                -webkit-transition: all 0.4s;
+                transition: all 0.4s;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+                padding: 1.625rem 2.25rem;
+                svg {
+                    font-size: 24px;
+                    * {
+                        color: #a6b0cf;
+                    }
+                }
+                &:hover {
+                    color: white;
+                    svg {
+                        * {
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .arrow {
+                position: absolute;
+                right: 24px;
+            }
+        }
+    }
+    span {
+        display: none;
+    }
+    .arrow {
+        display: none;
+    }
+}
+
+.openSideMenu {
+    width: 250px;
+    transform: translateX(0);
+    span {
+        display: block;
+    }
+    .arrow {
+        display: block;
+    }
+    .sideMenuWrap {
+        height: 100%;
+        .item {
+            a,
+            button {
+                padding: 1.625rem 2.5rem;
+                svg {
+                    font-size: 24px;
+                    * {
+                        color: #a6b0cf;
+                    }
+                }
+                &:hover {
+                    color: white;
+                    svg {
+                        * {
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .arrow {
+                position: absolute;
+                right: 24px;
+            }
+        }
+    }
+}

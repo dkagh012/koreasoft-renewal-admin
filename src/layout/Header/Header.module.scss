@@ -1,0 +1,141 @@
+@keyframes DropDownSlide {
+    100% {
+        transform: translateY(0);
+    }
+
+    0% {
+        transform: translateY(10px);
+    }
+}
+
+.headerContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 70px;
+    left: 0;
+    z-index: 1002;
+    background-color: var(--bs-header-bg);
+    box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.5rem;
+    .leftItem {
+        display: flex;
+        .headerLogo {
+            padding: 0 1.5rem;
+            text-align: center;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            background: #2a3042;
+            color: white;
+            justify-content: center;
+            font-weight: bold;
+            width: 70px;
+            a {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                height: 100%;
+                img {
+                    height: 42%;
+                    object-fit: contain;
+                }
+                span {
+                    display: none;
+                }
+            }
+        }
+        .sideMenuBar {
+            height: 70px;
+            font-size: 24px;
+            color: #555b6d;
+            padding: 0.75rem 1.5rem 0.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .profile {
+        position: relative;
+        transition: background-color 0.15s ease-in-out;
+        .profile_box {
+            img {
+                height: 36px;
+                width: 36px;
+                background-color: var(--bs-tertiary-bg);
+                padding: 3px;
+            }
+            button {
+                border: 0;
+                margin: 0;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                height: 70px;
+                padding: 0 5px;
+            }
+            svg {
+                font-size: 20px;
+            }
+        }
+        &.clicked {
+            background-color: #f8f9fa;
+        }
+    }
+    .dropdown {
+        position: absolute;
+        top: 70px;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+        animation-name: DropDownSlide;
+        animation-duration: 0.3s;
+        animation-fill-mode: both;
+        margin: 0;
+        padding: 1rem 0;
+        position: absolute;
+        z-index: 1000;
+        left: auto !important;
+        right: 0 !important;
+        a,
+        button {
+            font-size: 16px;
+            display: block;
+            width: 100%;
+            padding: 0.35rem 2rem;
+            clear: both;
+            font-weight: 400;
+            color: #495057;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &:hover {
+                background-color: #f8f9fa;
+            }
+        }
+    }
+    &.openSideMenu {
+        .leftItem {
+            .headerLogo {
+                width: 250px;
+                font-size: 27px;
+
+                a {
+                    img {
+                        height: 42%;
+                        object-fit: contain;
+                    }
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -28,4 +28,12 @@ body {
     height: auto;
     width: 100%;
     margin: 0 auto;
+    margin-left: 70px;
+    &.open {
+        margin-left: 250px;
+    }
+}
+
+.content {
+    padding: calc(70px + 24px) calc(24px * 0.75) 60px calc(24px * 0.75);
 }

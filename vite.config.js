@@ -51,7 +51,7 @@ export default defineConfig({
     },
     server: {
         port: 3000,
-        // host: '0.0.0.0', // 외부 IP 접근 허용 설정
-        host: 'localhost', // 로컬 개발용으로만 접근 가능
+        host: '0.0.0.0', // 외부 IP 접근 허용 설정
+        // host: 'localhost', // 로컬 개발용으로만 접근 가능
     },
 });

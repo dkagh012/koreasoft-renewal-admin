@@ -1,9 +1,60 @@
-import styles from './index.module.scss';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-const index = () => {
+import styles from './index.module.scss';
+import axios from 'axios';
+import { useState } from 'react';
+import PasswordInput from '@components/ChangeInput';
+
+export default function ChangePasswordPage() {
+    const navigate = useNavigate();
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmNewPassword, setConfirmNewPassword] = useState('');
+    const [error, setError] = useState('');
+
+    // 🔹 비밀번호 유효성 검사 함수 (8자 이상 & 특수 문자 포함)
+    const isPasswordValid = password => {
+        return password.length >= 8 && /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    };
+
+    // 🔹 비밀번호 변경 요청 처리
+    const handlePasswordChange = async () => {
+        try {
+            const response = await axios.post('/api/change-password', {
+                currentPassword,
+                newPassword,
+            });
+            if (response.status === 200) {
+                alert('비밀번호가 변경되었습니다.');
+                navigate('/');
+            }
+        } catch (error) {
+            alert('비밀번호 변경에 실패했습니다. 다시 시도해주세요.');
+            console.error('비밀번호 변경 오류:', error);
+        }
+    };
+
+    // 🔹 폼 제출 핸들러
+    const handleSubmit = e => {
+        e.preventDefault();
+        setError('');
+
+        if (!isPasswordValid(newPassword)) {
+            setError('비밀번호는 최소 8자 이상이며, 특수 문자를 포함해야 합니다.');
+            return;
+        }
+
+        if (newPassword !== confirmNewPassword) {
+            setError('새 비밀번호가 일치하지 않습니다.');
+            return;
+        }
+
+        handlePasswordChange();
+    };
+
     return (
-        <>
-            <form action="">
+        <div className={styles.pageContainer}>
+            <form onSubmit={handleSubmit}>
                 <div className={styles.top}>
                     {/* 🔹 상단 제목 & 링크 */}
                     <div className={styles.listTitleBox}>
@@ -17,34 +68,46 @@ const index = () => {
                             </div>
                             <div className={styles.action}>
                                 <Link to="/">취소</Link>
-                                <button type="button">저장</button>
+                                <button type="submit">저장</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div className={styles.inputBox}>
                     <ul>
                         <li>
-                            <label htmlFor="currentPassword">현재 비밀번호</label>
-                            <input type="password" id="currentPassword" placeholder="현재 비밀번호를 입력해주세요." />
+                            <PasswordInput
+                                id="currentPassword"
+                                label="현재 비밀번호"
+                                placeholder="현재 비밀번호를 입력해주세요."
+                                value={currentPassword}
+                                onChange={e => setCurrentPassword(e.target.value)}
+                            />
                         </li>
                         <li>
-                            <label htmlFor="newPassword">새 비밀번호</label>
-                            <input type="password" id="newPassword" placeholder="새 비밀번호를 입력해주세요." />
+                            <PasswordInput
+                                id="newPassword"
+                                label="새 비밀번호"
+                                placeholder="새 비밀번호를 입력해주세요."
+                                value={newPassword}
+                                onChange={e => setNewPassword(e.target.value)}
+                            />
                         </li>
                         <li>
-                            <label htmlFor="confirmNewPassword">새 비밀번호 확인</label>
-                            <input
-                                type="password"
+                            <PasswordInput
                                 id="confirmNewPassword"
+                                label="새 비밀번호 확인"
                                 placeholder="새 비밀번호를 다시 입력해주세요."
+                                value={confirmNewPassword}
+                                onChange={e => setConfirmNewPassword(e.target.value)}
                             />
                         </li>
                     </ul>
                 </div>
-            </form>
-        </>
-    );
-};
 
-export default index;
+                {error && <p className={styles.error}>{error}</p>}
+            </form>
+        </div>
+    );
+}

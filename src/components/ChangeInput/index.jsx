@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-const PasswordInput = ({ id, label, placeholder, value, onChange }) => {
+const InputBox = ({ id, label, placeholder, value, onChange }) => {
     return (
         <div className={styles.inputWrapper}>
             <label htmlFor={id}>{label}</label>
@@ -9,4 +9,4 @@ const PasswordInput = ({ id, label, placeholder, value, onChange }) => {
     );
 };
 
-export default PasswordInput;
+export default InputBox;

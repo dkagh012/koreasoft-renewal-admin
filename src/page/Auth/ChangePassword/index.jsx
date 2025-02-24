@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
 import axios from 'axios';
 import { useState } from 'react';
-import PasswordInput from '@components/ChangeInput';
+import InputBox from '@components/ChangeInput';
 
 export default function ChangePasswordPage() {
     const navigate = useNavigate();
@@ -77,7 +77,7 @@ export default function ChangePasswordPage() {
                 <div className={styles.inputBox}>
                     <ul>
                         <li>
-                            <PasswordInput
+                            <InputBox
                                 id="currentPassword"
                                 label="현재 비밀번호"
                                 placeholder="현재 비밀번호를 입력해주세요."
@@ -86,7 +86,7 @@ export default function ChangePasswordPage() {
                             />
                         </li>
                         <li>
-                            <PasswordInput
+                            <InputBox
                                 id="newPassword"
                                 label="새 비밀번호"
                                 placeholder="새 비밀번호를 입력해주세요."
@@ -95,7 +95,7 @@ export default function ChangePasswordPage() {
                             />
                         </li>
                         <li>
-                            <PasswordInput
+                            <InputBox
                                 id="confirmNewPassword"
                                 label="새 비밀번호 확인"
                                 placeholder="새 비밀번호를 다시 입력해주세요."

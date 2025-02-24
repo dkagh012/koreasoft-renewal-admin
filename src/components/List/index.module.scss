@@ -1,0 +1,129 @@
+.listWrap {
+    .listTitleBox {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 24px;
+        .listLink {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            a {
+                font-weight: bold;
+                color: #343a40;
+            }
+            h3 {
+                &::before {
+                    padding-right: 10px;
+                    color: #74788d;
+                    content: '/';
+                }
+            }
+        }
+        .titleBox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .title {
+                h2 {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+            }
+            .listAction {
+                display: flex;
+                gap: 10px;
+                a {
+                    padding: 1rem 1.2rem;
+                    font-weight: 400;
+                    border-radius: 5px;
+                    line-height: 1.5;
+                    background: #556ee6;
+                    color: white;
+                    font-size: 16px;
+                }
+                .searchBox {
+                    position: relative;
+                    input {
+                        border: 1px solid #ced4da;
+                        line-height: 1.5;
+                        font-weight: 400;
+                        font-size: 16px;
+                        border-radius: 5px;
+                        padding: 1rem 1.2rem;
+                        padding-right: 40px;
+                    }
+                    button {
+                        position: absolute;
+                        right: 0;
+                        height: 46.2px;
+                        display: flex;
+                        top: 0;
+                        align-items: center;
+                        font-size: 20px;
+                        width: 40px;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+    .listBox {
+        padding: 1.25rem 1.25rem;
+        box-shadow: 0 1rem 1.5rem rgba(18, 38, 63, 0.03);
+        background-color: white;
+        table {
+            width: 100%;
+            th {
+                font-weight: 600;
+            }
+            td {
+                select {
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+            th,
+            td {
+                border-bottom: 1px solid #eff2f7;
+                font-size: 16px;
+                padding: 1rem 1.5rem;
+                color: #495057;
+                a {
+                    width: 100%;
+                    display: block;
+                    text-decoration: underline;
+                    text-underline-position: under; // 밑줄이 너무 붙어있을 경우 추가
+                }
+                button {
+                    text-decoration: underline;
+                    text-underline-position: under; // 밑줄이 너무 붙어있을 경우 추가
+                }
+            }
+        }
+        .pagination {
+            display: flex;
+            font-size: 16px;
+            align-items: center;
+            padding-top: 20px;
+            gap: 10px;
+            justify-content: center;
+            button {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 32px;
+                border-radius: 30px;
+
+                &.active {
+                    color: white;
+                    background-color: #556ee6;
+                }
+            }
+        }
+    }
+}

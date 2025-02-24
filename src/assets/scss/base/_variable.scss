@@ -4,19 +4,7 @@ $breakpoint-tablet: 758px; // 태블릿 시작 크기
 $breakpoint-desktop: 1024px; // 데스크탑 시작 크기
 
 body {
-    overflow-x: hidden;
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: #b3cf0a;
-        border-radius: 10px; /* 스크롤바 둥근 테두리 */
-    }
-
-    &::-webkit-scrollbar-track {
-        background: transparent; /*스크롤바 뒷 배경 색상*/
-    }
+    background-color: #f8f8fb;
 }
 .container {
     display: flex;
@@ -26,11 +14,12 @@ body {
 }
 .wrap {
     height: auto;
-    width: 100%;
+    width: calc(100% - 70px);
     margin: 0 auto;
     margin-left: 70px;
     &.open {
         margin-left: 250px;
+        max-width: calc(100% - 250px);
     }
 }
 

@@ -1,0 +1,47 @@
+.listWrap {
+    .listTitleBox {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .listLink {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            a {
+                font-weight: bold;
+                color: #343a40;
+            }
+            h3 {
+                &::before {
+                    padding-right: 10px;
+                    color: #74788d;
+                    content: '/';
+                }
+            }
+        }
+        .titleBox {
+            display: flex;
+            .title {
+                h2 {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+            }
+            .listAction {
+                padding: 0.75rem 0.47rem;
+                font-weight: 400;
+                line-height: 1.5;
+                background: #556ee6;
+                color: white;
+                font-size: 13px;
+            }
+        }
+    }
+    .listBox {
+        padding: 1.25rem 1.25rem;
+        box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+        background-color: white;
+    }
+}

@@ -15,7 +15,7 @@
     height: 70px;
     left: 0;
     z-index: 1002;
-    background-color: var(--bs-header-bg);
+    background-color: white;
     box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
     display: flex;
     justify-content: space-between;
@@ -92,6 +92,7 @@
         animation-name: DropDownSlide;
         animation-duration: 0.3s;
         animation-fill-mode: both;
+        background: white;
         margin: 0;
         padding: 1rem 0;
         position: absolute;

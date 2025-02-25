@@ -17,5 +17,8 @@
         padding: 10.5px 23.5px;
         border-radius: 5px;
         border: 1px solid #ced4da;
+        &:disabled {
+            background-color: #f8f8fb;
+        }
     }
 }

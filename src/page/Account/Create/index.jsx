@@ -108,7 +108,6 @@ export default function AccountCreate() {
                         </li>
                     </ul>
                 </div>
-
                 {/* 🔹 에러 메시지 표시 */}
                 {error && <p className={styles.error}>{error}</p>}
             </form>

@@ -7,6 +7,7 @@ import { TbLogout2 } from 'react-icons/tb';
 import { IoIosArrowDown } from 'react-icons/io';
 import { CiSettings } from 'react-icons/ci';
 import { FaBars } from 'react-icons/fa6';
+import PropTypes from 'prop-types';
 
 function Header({ toggleSideMenu, isSideMenuOpen }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -33,7 +34,6 @@ function Header({ toggleSideMenu, isSideMenuOpen }) {
             document.removeEventListener('click', handleClickOutside);
         };
     }, []);
-
     return (
         <div className={`${styles.headerContainer} ${isSideMenuOpen ? styles.openSideMenu : ''}`}>
             <div className={styles.leftItem}>
@@ -77,5 +77,10 @@ function Header({ toggleSideMenu, isSideMenuOpen }) {
         </div>
     );
 }
+
+Header.propTypes = {
+    toggleSideMenu: PropTypes.func.isRequired,
+    isSideMenuOpen: PropTypes.bool.isRequired,
+};
 
 export default Header;

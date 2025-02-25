@@ -53,6 +53,21 @@
     .arrow {
         display: none;
     }
+    .clicked {
+        > a {
+            color: white !important;
+        }
+        button {
+            span {
+                color: white !important;
+            }
+        }
+        svg {
+            * {
+                color: white !important;
+            }
+        }
+    }
 }
 
 .openSideMenu {

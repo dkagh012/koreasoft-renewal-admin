@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
 import axios from 'axios';
 import { useState } from 'react';
 import InputBox from '@components/ChangeInput';
+import HeaderSection from '@components/HeaderSection';
 
 export default function AccountCreate() {
     const navigate = useNavigate();
@@ -57,24 +57,14 @@ export default function AccountCreate() {
     return (
         <div className={styles.pageContainer}>
             <form onSubmit={handleSubmit}>
-                <div className={styles.top}>
-                    {/* 🔹 상단 제목 & 링크 */}
-                    <div className={styles.listTitleBox}>
-                        <div className={styles.link}>
-                            <Link to="/account/manage">계정 관리</Link>
-                            <h3>계정 생성</h3>
-                        </div>
-                        <div className={styles.titleBox}>
-                            <div className={styles.title}>
-                                <h2>계정 생성</h2>
-                            </div>
-                            <div className={styles.action}>
-                                <Link to="/account/manage">취소</Link>
-                                <button type="submit">저장</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <HeaderSection
+                    title="계정 생성"
+                    breadcrumb={{ path: '/account/manage', text: '계정 관리' }}
+                    cancelLink="/account/manage"
+                    submitText="저장"
+                    onSubmit={handleSubmit}
+                />
+
                 {/* 🔹 입력 필드 */}
                 <div className={styles.inputBox}>
                     <ul>

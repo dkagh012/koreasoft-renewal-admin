@@ -1,10 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
 import axios from 'axios';
 import { useState } from 'react';
 import InputBox from '@components/ChangeInput';
-
+import HeaderSection from '@components/HeaderSection';
 export default function ChangePasswordPage() {
     const navigate = useNavigate();
     const [currentPassword, setCurrentPassword] = useState('');
@@ -55,24 +54,13 @@ export default function ChangePasswordPage() {
     return (
         <div className={styles.pageContainer}>
             <form onSubmit={handleSubmit}>
-                <div className={styles.top}>
-                    {/* 🔹 상단 제목 & 링크 */}
-                    <div className={styles.listTitleBox}>
-                        <div className={styles.link}>
-                            <Link to="/">홈</Link>
-                            <h3>비밀번호 변경</h3>
-                        </div>
-                        <div className={styles.titleBox}>
-                            <div className={styles.title}>
-                                <h2>비밀번호 변경</h2>
-                            </div>
-                            <div className={styles.action}>
-                                <Link to="/">취소</Link>
-                                <button type="submit">저장</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <HeaderSection
+                    title="비밀번호 변경"
+                    breadcrumb={{ path: '/', text: '홈' }}
+                    cancelLink="/"
+                    submitText="저장"
+                    onSubmit={handleSubmit}
+                />
 
                 <div className={styles.inputBox}>
                     <ul>

@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import InputBox from '@components/ChangeInput';
+import HeaderSection from '@components/HeaderSection';
 
 export default function AccountPasswordChange() {
     const navigate = useNavigate();
@@ -76,26 +76,13 @@ export default function AccountPasswordChange() {
     return (
         <div className={styles.pageContainer}>
             <form onSubmit={handleSubmit}>
-                <div className={styles.top}>
-                    {/* 🔹 상단 제목 & 링크 */}
-                    <div className={styles.listTitleBox}>
-                        <div className={styles.link}>
-                            <Link to="/account/manage">계정 관리</Link>
-                            <h3>비밀번호 변경</h3>
-                        </div>
-                        <div className={styles.titleBox}>
-                            <div className={styles.title}>
-                                <h2>비밀번호 변경</h2>
-                            </div>
-                            <div className={styles.action}>
-                                <Link to="/account/manage">취소</Link>
-                                <button type="submit" disabled={!isPasswordValid(newPassword)}>
-                                    저장
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <HeaderSection
+                    title="비밀번호 변경"
+                    breadcrumb={{ path: '/account/manage', text: '계정관리' }}
+                    cancelLink="/"
+                    submitText="저장"
+                    onSubmit={handleSubmit}
+                />
 
                 {/* 🔹 입력 필드 */}
                 <div className={styles.inputBox}>

@@ -16,6 +16,7 @@ export default defineConfig({
             },
         },
     },
+
     resolve: {
         alias: {
             '@api': path.resolve(__dirname, './src/apis'),
@@ -49,6 +50,7 @@ export default defineConfig({
             },
         },
     },
+
     server: {
         port: 3000,
         host: '0.0.0.0', // 외부 IP 접근 허용 설정

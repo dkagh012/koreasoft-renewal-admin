@@ -1,0 +1,35 @@
+.inputContainer {
+    box-shadow: 0 1rem 1.5rem rgba(18, 38, 63, 0.03);
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    height: auto;
+    ul {
+        li {
+            padding-bottom: 10px;
+            .inputBox {
+                border: 1px solid #ced4da;
+                border-radius: 5px;
+                input {
+                    padding: 10.5px 23.5px;
+                    width: 100%;
+                    border: none;
+                }
+            }
+            .selectBox {
+                select {
+                    padding: 10.5px 5px;
+                    border: 1px solid #ced4da;
+                    cursor: pointer;
+                }
+            }
+            label {
+                padding-bottom: 10px;
+                font-weight: 500;
+                font-size: 16px;
+                display: block;
+                letter-spacing: -0.5px;
+            }
+        }
+    }
+}

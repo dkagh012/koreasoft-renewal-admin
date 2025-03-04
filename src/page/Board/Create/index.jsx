@@ -121,25 +121,28 @@ const PostForm = () => {
                         <li>
                             <label>공개 여부</label>
                             <div className={styles.radioBox}>
-                                <input
-                                    type="radio"
-                                    id="public"
-                                    name="visibility"
-                                    value="공개"
-                                    checked={visibility === '공개'}
-                                    onChange={handleVisibilityChange}
-                                />
-                                <label htmlFor="public">공개</label>
-
-                                <input
-                                    type="radio"
-                                    id="private"
-                                    name="visibility"
-                                    value="비공개"
-                                    checked={visibility === '비공개'}
-                                    onChange={handleVisibilityChange}
-                                />
-                                <label htmlFor="private">비공개</label>
+                                <div>
+                                    <input
+                                        type="radio"
+                                        id="public"
+                                        name="visibility"
+                                        value="공개"
+                                        checked={visibility === '공개'}
+                                        onChange={handleVisibilityChange}
+                                    />
+                                    <label htmlFor="public">공개</label>
+                                </div>
+                                <div>
+                                    <input
+                                        type="radio"
+                                        id="private"
+                                        name="visibility"
+                                        value="비공개"
+                                        checked={visibility === '비공개'}
+                                        onChange={handleVisibilityChange}
+                                    />
+                                    <label htmlFor="private">비공개</label>
+                                </div>
                             </div>
                         </li>
 

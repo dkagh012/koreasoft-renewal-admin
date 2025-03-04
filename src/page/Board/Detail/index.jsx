@@ -20,7 +20,7 @@ const Index = () => {
                     <li>
                         <label>제목</label>
                         <div>
-                            <p>AI·IoT의 융합과 진화' AIoT 국제전시회 성황리에 막 올려</p>
+                            <p>AI·IoT의 융합과 진화 AIoT 국제전시회 성황리에 막 올려</p>
                         </div>
                     </li>
                     <li>

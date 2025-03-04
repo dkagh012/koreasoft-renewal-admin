@@ -18,7 +18,7 @@ const Index = () => {
         구분: item.구분,
         '파트너사 로고': (
             <Link
-                to={`/partner/${index + 1}/edit`}
+                to={`/partners/${index + 1}`}
                 style={{
                     display: 'flex',
                     justifyContent: 'center',

@@ -4,9 +4,20 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { CiSearch } from 'react-icons/ci';
-const List = ({ listLink, title, listAction, columns, data, itemsPerPage = 10 }) => {
+
+const List = ({
+    listLink,
+    title,
+    listAction,
+    columns,
+    data,
+    select, // ✅ select 사용 여부
+    options = [], // ✅ select 옵션 배열
+    itemsPerPage = 10,
+}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
+    const [selectedOption, setSelectedOption] = useState(options.length > 0 ? options[0] : ''); // ✅ 선택된 옵션 상태
 
     // 🔹 현재 URL 가져오기
     const location = useLocation();
@@ -77,6 +88,21 @@ const List = ({ listLink, title, listAction, columns, data, itemsPerPage = 10 })
                         <h2>{title}</h2>
                     </div>
                     <div className={styles.listAction}>
+                        {/* ✅ 검색 옆에 select 추가 */}
+                        {select && (
+                            <select
+                                value={selectedOption}
+                                onChange={e => setSelectedOption(e.target.value)}
+                                className={styles.selectBox}
+                            >
+                                {options.map((option, index) => (
+                                    <option key={index} value={option}>
+                                        {option}
+                                    </option>
+                                ))}
+                            </select>
+                        )}
+                        {/* ✅ 검색 기능 */}
                         {isSearchEnabled && (
                             <div className={styles.searchBox}>
                                 <input
@@ -90,6 +116,8 @@ const List = ({ listLink, title, listAction, columns, data, itemsPerPage = 10 })
                                 </button>
                             </div>
                         )}
+
+                        {/* 리스트 추가 액션 버튼 */}
                         {listAction && <Link to={listAction.path}>{listAction.text}</Link>}
                     </div>
                 </div>
@@ -177,6 +205,8 @@ List.propTypes = {
         }),
     ).isRequired,
     data: PropTypes.arrayOf(PropTypes.object).isRequired,
+    select: PropTypes.bool, // ✅ select 사용 여부
+    options: PropTypes.arrayOf(PropTypes.string), // ✅ select 옵션 리스트
     itemsPerPage: PropTypes.number, // 한 페이지당 보여줄 항목 수 (기본값: 10)
 };
 

@@ -61,7 +61,7 @@ const BoardList = () => {
 
     return (
         <List
-            listLink={{ path: '/board', text: '게시판 관리' }}
+            listLink={{ path: '/board/all', text: '게시판 관리' }}
             title={boardTitle}
             listAction={{ path: '/board/create', text: '게시글 작성' }}
             columns={columns}

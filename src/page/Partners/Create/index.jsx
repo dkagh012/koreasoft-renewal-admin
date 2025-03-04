@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 
 const index = () => {
-    return <div></div>;
+    return <div>ㅇㅇ</div>;
 };
 
 export default index;

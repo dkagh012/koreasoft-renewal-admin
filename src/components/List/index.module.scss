@@ -67,6 +67,16 @@
                         justify-content: center;
                     }
                 }
+                select {
+                    border: 1px solid #ced4da;
+                    line-height: 1.5;
+                    font-weight: 400;
+                    font-size: 16px;
+                    border-radius: 5px;
+                    padding: 1rem 1.2rem;
+                    padding-right: 40px;
+                    outline: 0;
+                }
             }
         }
     }
@@ -74,6 +84,7 @@
         padding: 1.25rem 1.25rem;
         box-shadow: 0 1rem 1.5rem rgba(18, 38, 63, 0.03);
         background-color: white;
+
         table {
             width: 100%;
             th {
@@ -91,6 +102,7 @@
                 font-size: 16px;
                 padding: 1rem 1.5rem;
                 color: #495057;
+                vertical-align: middle;
                 a {
                     width: 100%;
                     display: block;

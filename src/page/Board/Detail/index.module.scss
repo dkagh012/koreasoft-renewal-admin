@@ -1,0 +1,30 @@
+.detailContainer {
+    box-shadow: 0 1rem 1.5rem rgba(18, 38, 63, 0.03);
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    height: auto;
+    ul {
+        li {
+            padding-bottom: 20px;
+            > div {
+                border: 1px solid #ced4da;
+                border-radius: 5px;
+                padding: 10.5px 13.5px;
+                border-radius: 5px;
+                width: 100%;
+                font-size: 14px;
+            }
+            > label {
+                padding-bottom: 10px;
+                font-weight: 500;
+                font-size: 16px;
+                display: block;
+                letter-spacing: -0.5px;
+            }
+            .detailText {
+                height: 400px;
+            }
+        }
+    }
+}

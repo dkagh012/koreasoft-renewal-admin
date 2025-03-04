@@ -2,7 +2,18 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './index.module.scss';
 
-const HeaderSection = ({ title, breadcrumb, cancelLink, submitText, onSubmit }) => {
+const HeaderSection = ({
+    title,
+    breadcrumb,
+    cancelLink,
+    submitText,
+    onSubmit,
+    text,
+    editText,
+    editLink,
+    deleteText,
+    deleteLink,
+}) => {
     return (
         <div className={styles.top}>
             {/* 🔹 상단 제목 & 링크 */}
@@ -16,10 +27,24 @@ const HeaderSection = ({ title, breadcrumb, cancelLink, submitText, onSubmit }) 
                         <h2>{title}</h2>
                     </div>
                     <div className={styles.action}>
-                        <Link to={cancelLink}>취소</Link>
-                        <button type="submit" onClick={onSubmit}>
-                            {submitText}
-                        </button>
+                        {editText && (
+                            <Link className={styles.edit} to={editLink}>
+                                수정
+                            </Link>
+                        )}
+                        {deleteText && (
+                            <Link className={styles.delete} to={deleteLink}>
+                                삭제
+                            </Link>
+                        )}
+                        <Link className={styles.back} to={cancelLink}>
+                            {text}
+                        </Link>
+                        {submitText && (
+                            <button type="submit" onClick={onSubmit}>
+                                {submitText}
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>

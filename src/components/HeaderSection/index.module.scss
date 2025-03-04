@@ -39,9 +39,24 @@
                 font-weight: 400;
                 border-radius: 5px;
                 line-height: 1.5;
+                font-size: 16px;
+                min-width: 60px;
+                text-align: center;
+            }
+            .back {
                 background: #eff2f7;
                 color: black;
-                font-size: 16px;
+                border: 1px solid rgb(160, 160, 160);
+            }
+            .edit {
+                color: #34c38f;
+                border: 1px solid #34c38f;
+                background-color: rgba(52, 195, 143, 0.18);
+            }
+            .delete {
+                color: #f46a6a;
+                border: 1px solid #f46a6a;
+                background-color: rgba(244, 106, 106, 0.18);
             }
             button {
                 padding: 1rem 1.2rem;

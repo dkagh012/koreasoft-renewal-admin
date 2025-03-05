@@ -41,8 +41,8 @@ const PartnerForm = () => {
             <form onSubmit={handleSubmit}>
                 <HeaderSection
                     title="파트너사 등록"
-                    breadcrumb={{ path: '/board/all', text: '게시판' }}
-                    cancelLink="/board/all"
+                    breadcrumb={{ path: '/partners', text: '파트너사 관리' }}
+                    cancelLink="/partners"
                     submitText="저장"
                     text="취소"
                     onSubmit={handleSubmit}

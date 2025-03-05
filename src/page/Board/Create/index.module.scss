@@ -10,6 +10,12 @@
             .inputBox {
                 border: 1px solid #ced4da;
                 border-radius: 5px;
+                display: flex;
+                align-items: center;
+                > svg {
+                    width: 63px;
+                    font-size: 21px;
+                }
                 input {
                     padding: 10.5px 13.5px;
                     border-radius: 5px;

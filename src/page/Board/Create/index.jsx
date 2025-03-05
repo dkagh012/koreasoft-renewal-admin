@@ -5,7 +5,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '@toast-ui/editor/dist/toastui-editor.css'; // Toast UI Editor 스타일
 import { Editor } from '@toast-ui/react-editor';
-
+import { CiCalendar } from 'react-icons/ci';
 const PostForm = () => {
     const editorRef = useRef(); // 에디터 Ref
     const [category, setCategory] = useState('');
@@ -165,6 +165,8 @@ const PostForm = () => {
                                         <Calendar onChange={handleDateChange} value={postDate} />
                                     </div>
                                 )}
+
+                                <CiCalendar />
                             </div>
                         </li>
 
